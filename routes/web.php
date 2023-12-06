@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\C_cours;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $cours = DB::table("c_cours")->orderBy("date")->get();
+    return view('index',[
+        "cours" => $cours
+    ]);
 });
