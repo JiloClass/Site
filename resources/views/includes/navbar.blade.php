@@ -4,7 +4,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="navbar navbar-expand-lg navbar-base" id="navbar">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
-            <img src="src/img/jiloclass.gif" class="d-inline-block align-text-top">
+            <img src="{{ asset("img/jiloclass.gif") }}" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-xl fa-bars burger-navbar"></i>
