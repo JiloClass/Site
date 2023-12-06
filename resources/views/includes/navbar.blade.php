@@ -26,36 +26,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
             <div class="navbar-right">
                 <ul class="navbar-nav">
-                    <?php if($usersession == true){ ?>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdownProfil" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo $display_user =
-                            (isset($_SESSION['prenom']) && isset($_SESSION['nom']) && !empty($_SESSION['prenom']) && !empty($_SESSION['nom']))
-                            ? "".$_SESSION['prenom']." ".$_SESSION['nom'].""
-                            : $_SESSION['pseudo'];
-                            ?>
-                            <?= '<img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64,' . base64_encode($_SESSION['image']) . '"/>' ?>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownProfil">
-                                <?php
-                                if($accesspanel == true){
-                                    echo "<li><a class='dropdown-item' href='admin'>Panel Admin</a></li>";
-                                }
-                                ?>
-                                <li><a class="dropdown-item" href="/dashboard/index.php">Panel Creator</a></li>
-                                <li><a class="dropdown-item" href="/dashboard/profil.php">Profil</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="logout.php">Déconnexion</a></li>
-                            </ul>
-                        </li>
-                        <?php }else{ ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.php">Connexion</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="signup.php">Inscription</a>
-                            </li>
-                    <?php } ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.php">Inscription</a>
+                    </li>
                 </ul>
             </div>
         </div>

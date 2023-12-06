@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\C_cours;
-use Illuminate\Support\Facades\DB;
+use App\Models\Cours;
+use App\Models\Creators;
+use App\Models\Users;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $cours = DB::table("c_cours")->orderBy("date")->get();
+
+    $cours = Cours::orderBy('date', 'asc')->take(3)->get();
+    $count_cours = Cours::all()->count();
+    $count_user = Users::all()->count();
+    $count_creator = Creators::all()->count();
+    $count_apprentices = $count_user - $count_creator;
+
     return view('index',[
-        "cours" => $cours
+        "cours" => $cours,
+        "count_user" => $count_user,
+        "count_cours" => $count_cours,
+        "count_creator" => $count_creator,
+        "count_apprentices" => $count_apprentices
     ]);
 });

@@ -43,21 +43,23 @@
     <div class="container">
         <h1>Nos Cours</h1>
         <div class="cards">
-          <div class="card">
-            <div class="card-content">
-              <div class="title-img-user">
-                  <?= '<img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64,' . base64_encode($ruc['image']) . '"/>' ?>
-                  <div class="title">
-                    <h4><?= $rac['titre'] ?></h4>
-                    <p><?= $ruc['pseudo'] ?></p>
-                  </div>
+            @foreach ($cours as $cour)
+                <div class="card">
+                    <div class="card-content">
+                    <div class="title-img-user">
+                        <img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64, @php base64_encode($cour->user->image) @endphp"/>
+                        <div class="title">
+                            <h4>{{ $cour->title }}</h4>
+                            <p>{{ $cour->user->pseudo }}</p>
+                        </div>
+                        </div>
+                        <i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>
+                    </div>
+                    <p>{{ Str::limit($cour->description, 40, '...')}}</p>
+                    </div>
+                    <a class="start-learn" href="cours.php?id={{ $cour->id }}">Apprendre</a>
                 </div>
-                <i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>
-              </div>
-              <p><?php shorten($rac['description'], 40); ?></p>
-            </div>
-            <a class="start-learn" href="cours.php?id=<?= $rac['id'] ?>">Apprendre</a>
-          </div>
+            @endforeach
         </div>
       </div>
     <div class="container container-display container-infos">
@@ -75,19 +77,19 @@
     </svg>
     <div class="cards">
       <div class="card-content-info noselect">
-        <h3><?= $ru ?></h3>
+        <h3><?= $count_user ?></h3>
         <h2>Utilisateurs</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3><?= $ra ?></h3>
+        <h3><?= $count_apprentices ?></h3>
         <h2>Apprentis</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3><?= $rclass ?></h3>
+        <h3><?= $count_cours ?></h3>
         <h2>Cours</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3><?= $rc ?></h3>
+        <h3>{{ $count_creator }}</h3>
         <h2>Créateurs</h2>
       </div>
     </div>
