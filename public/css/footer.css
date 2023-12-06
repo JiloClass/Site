@@ -1,0 +1,118 @@
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+footer .footer-bottom, footer .footer-top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-top{
+    border-top: 1px solid var(--dark);
+    padding: 1% 5px;
+}
+
+footer .footer-top .box h4{
+    color: var(--black);
+    font-family: sans-serif;
+    margin: 25px auto;
+    text-align: center;
+    font-size: 25px;
+    max-width: 600px;
+    position: relative;
+}
+
+footer .footer-top .box h4:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--linear-principal);
+    left: 0;
+    top: 100%;
+    position: absolute;
+}
+
+footer .footer-top .box a{
+    background: var(--linear-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+footer .footer-top .box a:hover{
+    background: var(--linear-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer .footer-top .box a.btn-social{
+    color: var(--secondary-in-linear);
+    width: 40px;
+    border: 1px solid var(--black);
+    height: 40px;
+    display: flex;
+    padding: 0.5rem 0.625rem;
+    box-sizing: border-box;
+    transition: background 0.5s ease;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+footer .footer-top .box a.btn-social.discord:hover i{
+    background: var(--discord);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+}
+
+footer .footer-bottom{
+    background: var(--linear-principal);
+    color: var(--principal);
+    justify-content: space-between;
+}
+
+footer .footer-bottom .footer-bottom-left{
+    justify-content: flex-start;
+}
+
+footer .footer-bottom .footer-bottom-right{
+    justify-content: flex-end;
+}
+
+footer .footer-bottom .footer-bottom-left, footer .footer-bottom .footer-bottom-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer .footer-bottom p{
+    margin: 15px;
+    color: var(--secondary-in-linear);
+}
+
+@media screen and (min-width: 1024px){
+    footer .footer-bottom, footer .footer-top{
+        flex-direction: row;
+    }
+
+    footer .footer-top{
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    footer .footer-bottom, footer .footer-top{
+        flex-direction: column;
+    }
+    footer .footer-top{
+        justify-content: flex-start;
+    }
+}

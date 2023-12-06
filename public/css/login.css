@@ -1,0 +1,83 @@
+h1, h2, h3, h4, h5, h6, p, label{
+    color: var(--secondary);
+}
+
+.container-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    flex-wrap: initial;
+    min-height: 65vh;
+    padding: 12px 0 25px;
+    width: 100%!important;
+}
+
+.card-bar{
+    width: 100%;
+}
+
+.modal-wrapper{
+    margin-top: 30px;
+    box-shadow: 0 0 100px var(--gray);
+}
+
+.modal-top-bar{
+    width: 100%;
+    height: 5px;
+    background: var(--linear-principal);
+    border-radius: 5px 5px 0 0;
+}
+
+.modal-container{
+    background-color: var(--light-gray);
+    padding: 30px;
+    width: 400px;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button i{
+    margin-right: 5px;
+}
+
+button[type="submit"]{
+    height: 45px;
+    padding: 13px 30px;
+    border-radius: 45px;
+    border-width: 0;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    color: var(--principal);
+    background: var(--linear-secondary);
+    transition-property: height,box-shadow,background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+}
+
+button[type="submit"]:hover{
+    background: var(--linear-principal);
+}
+
+form a{
+    background: var(--linear-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+form a:hover{
+    background: var(--linear-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 1023px){
+    .modal-container{
+        width: 360px!important;
+    }
+}

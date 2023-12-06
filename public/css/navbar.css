@@ -1,0 +1,281 @@
+[data-theme="light"]{
+    --linear-principal: linear-gradient(45deg, #3431d4d9 15%, #0545fbd9 75%);
+    --shadow: #C5B7B7;
+    --linear-secondary: linear-gradient(45deg, #0C8AFFd9 15%, #0066FFd9 75%);
+    --light-gray: #F2F6FC;
+    --light-gray-shadow: #d4d9e2;
+    --space-waves-infos: 50px;
+    --linear-scrollbar: linear-gradient(45deg, #0C8AFFd9 15%, #0066FFd9 75%);
+    --linear-scrollbar-hover: linear-gradient(45deg, #3431d4d9 15%, #0545fbd9 75%);
+    --gray: #bbbbbb;
+    --dark: white;
+    --mdark: white;
+    --forum-message: #F2F6FC;
+    --principal: white;
+    --secondary: #000;
+    --secondary-in-linear: white;
+    --color-red: red;
+    --black: #000;
+    --discord: #7289da;
+    --wave-color: white;
+    --wave-color-2: rgba(255, 255, 255, 0.6);
+    --wave-color-3: rgba(255, 255, 255, 0.447);
+    --wave-color-4: rgba(255, 255, 255, 0.227);
+    --shadow-card: rgba(48,48,48,0.45);
+    --tw-text-opacity: 1;
+}
+
+[data-theme="dark"]{
+    --linear-principal: linear-gradient(45deg, #e1a510 15%, #e65400 75%);
+    --shadow: #C5B7B7;
+    --linear-secondary: linear-gradient(45deg, #f0b521 15%, #ff6f1c 75%);
+    --light-gray: #21232f;
+    --light-gray-shadow: #262730;
+    --space-waves-infos: 50px;
+    --linear-scrollbar: linear-gradient(45deg, #e1a510 15%, #e65400 75%);
+    --linear-scrollbar-hover: linear-gradient(45deg, #f0b521 15%, #ff6f1c 75%);
+    --gray: #bbbbbb;
+    --dark: #1f2027;
+    --mdark: #292a33;
+    --forum-message: #292a33;
+    --principal: #000;
+    --secondary: rgb(148 163 184 / var(--tw-text-opacity));
+    --secondary-in-linear: white;
+    --color-red: red;
+    --black: rgb(203 213 225 / var(--tw-text-opacity));
+    --discord: #7289da;
+    --wave-color: #1f2027;
+    --wave-color-2: #1f20279d;
+    --wave-color-3: #1f202767;
+    --wave-color-4: #1f20272f;
+    --shadow-card: rgba(167, 167, 167, 0.45);
+    --shadow-card-hover: rgba(167, 167, 167, 0.248);
+    --tw-text-opacity: 1;
+}
+
+.button-changeTheme{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    border-radius: 50px;
+    background-color: var(--mdark);
+    margin: 15px;
+    z-index: 1;
+    transition: .5s ease;
+    cursor: pointer;
+    box-shadow: #30303094 0em 0em 0.5em;
+}
+
+.button-changeTheme:hover{
+    bottom: 5px;
+    left: 1.5px;
+}
+
+#icon-changeTheme{
+    font-size: 25px;
+    background: var(--linear-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html, body{
+    background: var(--dark);
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans__subset', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+
+.content .header{
+    padding: 0;
+    margin: 0;
+    margin-top: 30px!important;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--secondary);
+}
+
+.content .header .header-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content .header .header-left{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.font-bold{
+    font-weight: 700;
+}
+
+label{
+    color: var(--secondary);
+}
+
+input[type="text"], input[type="password"], [type="email"], [type="tel"], textarea, .form-control{
+    background-color: var(--mdark);
+    color: var(--secondary);
+}
+
+input[type="text"]:hover, input[type="password"]:hover, [type="email"]:hover, [type="tel"]:hover, textarea:hover, .form-control:hover{
+    background-color: var(--mdark);
+    caret-color: var(--secondary);
+    color: var(--secondary);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, [type="email"]:focus, [type="tel"]:focus, textarea:focus, .form-control:focus{
+    background-color: var(--mdark);
+    caret-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light-gray);
+    --bs-navbar-padding-y: 0rem;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar .container-fluid{
+    width: auto;
+}
+
+.navbar-toggler{
+    border: none!important;
+}
+
+.navbar-toggler i{
+    color: white;
+}
+
+nav.fixed-top{
+    box-shadow: 0 0 1em #12192c;
+}
+
+.navbar-brand img{
+    width: 75px;
+    height: 75px;
+}
+
+.nav-link{
+    color: var(--black);
+    position: relative;
+    font-size: 18px;
+}
+
+.nav-link.active{
+    background: var(--linear-principal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link.active::before{
+    content: "";
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 3px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: var(--linear-principal);
+}
+
+.nav-link:hover, .nav-link:focus{color: var(--gray);}
+
+.navbar-collapse, .container-fluid{background: none;}
+
+@media screen and (min-width: 1024px){
+    .navbar-right{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .nav-link.active::before{
+        top: 35px!important;
+    }
+    .navbar-collapse > .navbar-nav{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-nav{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar .container-fluid{
+        width: 100%!important;
+    }
+}
+
+.noselect {
+    user-drag: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+.dropdown-menu{
+    background-color: var(--light-gray);
+}
+
+.dropdown-item{
+    color: var(--secondary);
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    width: 75%;
+    background: var(--linear-scrollbar);
+    border-radius: 10px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-corner {
+        background-color: transparent;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--light-gray-shadow);
+    --bs-tooltip-color: var(--secondary);
+}
+
+@media screen and (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        margin-right: var(--bs-navbar-nav-link-padding-x);
+        margin-left: var(--bs-navbar-nav-link-padding-x);
+        padding: 0;
+        margin: 15px;
+    }
+    .content .header{
+        width: 900px;
+    }
+}

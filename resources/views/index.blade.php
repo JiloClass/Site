@@ -31,11 +31,11 @@
       <h1>À quoi sert JiloClass ?</h1>
       <div class="cards cards-view">
         <div class="card-view">
-          <img src="src/img/science.png">
+          <img src="{{ asset("img/science.png") }}">
           <h3 class="noselect">Avec JiloClass vous pouvez apprendre la science, La SVT, La physique chimie</h3>
         </div>
         <div class="card-view card-view-reverse">
-          <img src="src/img/code.png">
+          <img src="{{ asset("img/code.png") }}">
           <h3 class="noselect">Mais aussi le code, par exemple HTML, CSS ou PHP, mais aussi Ruby, Perle, C++, C#</h3>
         </div>
       </div>
@@ -114,6 +114,6 @@
       </div>
     </div>
   </div>
-<script src="src/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset("js/bootstrap.bundle.min.js") }}"></script>
 
 @endsection

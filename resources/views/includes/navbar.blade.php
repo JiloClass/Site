@@ -38,11 +38,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </nav>
 <!-- <a class="button-changeTheme" onclick="changecolorTheme()"><i class="fas fa-sun" id="icon-changeTheme"></i></a> -->
-<link rel="stylesheet" href="src/css/navbar.css">
+<link rel="stylesheet" href="{{ asset("css/navbar.css") }}">
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/63f602dc31ebfa0fe7eeb047/1gpsfmbdq';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script>
 <!--End of Tawk.to Script-->
-<script src="src/js/jquery.min.js"></script>
+<script src="{{ asset("js/jquery.min.js") }}"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZCN3LPT83"></script>
 <script>
