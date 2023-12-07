@@ -12,7 +12,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a @class(["nav-link"], "active" => Route::)
+                    <a @class(["nav-link"])
                     id="nav-link-home" href="index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
