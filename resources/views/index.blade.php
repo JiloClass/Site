@@ -52,9 +52,9 @@
                                 <h4>{{ $cour->title }}</h4>
                                 <p>{{ $cour->user->pseudo }}</p>
                             </div>
-                            <iconify-icon class="icon-certified" icon="mingcute:certificate-fill" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></iconify-icon>
+                            <i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>
                         </div>
-                    <p>{{ Str::limit($cour->description, 40, '...')}}</p>
+                    <p class="desc">{{ Str::limit($cour->description, 40, '...')}}</p>
                     </div>
                     <a class="start-learn" href="cours.php?id={{ $cour->id }}">Apprendre</a>
                 </div>

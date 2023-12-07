@@ -48,8 +48,7 @@
     --wave-color-2: #1f20279d;
     --wave-color-3: #1f202767;
     --wave-color-4: #1f20272f;
-    --shadow-card: rgba(167, 167, 167, 0.45);
-    --shadow-card-hover: rgba(167, 167, 167, 0.248);
+    --shadow-card: rgba(0,0,0,0.45);
     --tw-text-opacity: 1;
 }
 
