@@ -224,3 +224,14 @@ header .title p{
         margin-bottom: 45px;
     }
 }
+
+.page-link{
+    background: var(--dark)!important;
+    color: white!important;
+    border: var(--light-gray-shadow)!important;
+}
+
+.active>.page-link, .page-link.active{
+    border-color: var(--linear-principal)!important;
+    background: var(--linear-principal)!important;
+}

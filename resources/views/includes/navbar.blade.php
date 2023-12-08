@@ -13,13 +13,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a @class(["nav-link", "active" => request()->route()->getName() === 'index'])
-                    id="nav-link-home" href="{{ route("index") }}">Accueil</a>
+                        id="nav-link-home" href="{{ route("index") }}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-link-docs" href="#">Docs</a>
+                    <a class="nav-link "id="nav-link-docs" href="#">Docs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="nav-link-cours" href="#">Cours</a>
+                    <a @class(["nav-link", "active" => request()->route()->getName() === 'cours'])
+                    id="nav-link-cours" href="{{ route("cours") }}">Cours</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="nav-link-forum" href="forum.php">Forum</a>

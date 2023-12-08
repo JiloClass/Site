@@ -33,3 +33,10 @@ Route::get('/', function () {
     ]);
 
 })->name("index");
+
+Route::get("/cours", function(){
+    $cours = Cours::paginate(6);
+    return view("cours", [
+        "cours" => $cours
+    ]);
+})->name("cours");

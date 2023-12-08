@@ -22,8 +22,8 @@
         <link rel="stylesheet" href="{{ asset("css/style.css") }}">
         <link rel="shortcut icon" href="{{ asset("img/jiloclass.png") }}" type="image/x-icon">
         <link rel="stylesheet" href="{{ asset("css/footer.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/card.css") }}">
         <link rel="stylesheet" href="{{ asset("fontawesome/css/all.css") }}">
+        @yield("link")
     </head>
     <body data-theme="dark">
         @include("includes.navbar")
