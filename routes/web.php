@@ -31,4 +31,5 @@ Route::get('/', function () {
         "count_creator" => $count_creator,
         "count_apprentices" => $count_apprentices
     ]);
-});
+
+})->name("index");
