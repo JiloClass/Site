@@ -1,4 +1,5 @@
 @extends("base")
+@section("title", "JiloClass | Cours")
 @section("link")
 <link rel="stylesheet" href="{{ asset("css/cours.css") }}">
 @endsection
@@ -29,7 +30,6 @@
                 </div>
             @endforeach
         </div>
-
         {{ $cours->links() }}
     </div>
 </div>

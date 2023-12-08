@@ -33,27 +33,27 @@
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     </body>
     <footer>
-    <div class="footer-top">
-        <div class="box">
-            <h4>JiloClass</h4>
-            <a href="forum.php">Forum</a>
+        <div class="footer-top">
+            <div class="box">
+                <h4>JiloClass</h4>
+                <a href="forum.php">Forum</a>
+            </div>
+            <div class="box">
+                <h4>Nos réseaux sociaux</h4>
+                <a href="https://discord.gg/GYdXcUaZHe" target="_blank" class="btn-social discord"><i class="fa-brands fa-discord fa-1x"></i></a>
+            </div>
+            <div class="box">
+                <h4>Nos réseaux sociaux</h4>
+                <a href="https://discord.gg/GYdXcUaZHe" target="_blank" class="btn-social discord"><i class="fa-brands fa-discord fa-1x"></i></a>
+            </div>
         </div>
-        <div class="box">
-            <h4>Nos réseaux sociaux</h4>
-            <a href="https://discord.gg/GYdXcUaZHe" target="_blank" class="btn-social discord"><i class="fa-brands fa-discord fa-1x"></i></a>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+            <p>Developped by Nokaji</p>
+            </div>
+            <div class="footer-bottom-right">
+                <p>Copyright &copy; JiloClass 2022 - <?= date("Y") ?></p>
+            </div>
         </div>
-        <div class="box">
-            <h4>Nos réseaux sociaux</h4>
-            <a href="https://discord.gg/GYdXcUaZHe" target="_blank" class="btn-social discord"><i class="fa-brands fa-discord fa-1x"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="footer-bottom-left">
-        <p>Developped by Nokaji</p>
-        </div>
-        <div class="footer-bottom-right">
-            <p>Copyright &copy; JiloClass 2022 - <?= date("Y") ?></p>
-        </div>
-    </div>
     </footer>
 </html>

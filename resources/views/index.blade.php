@@ -78,15 +78,15 @@
     </svg>
     <div class="cards">
       <div class="card-content-info noselect">
-        <h3><?= $count_user ?></h3>
+        <h3>{{ $count_user }}</h3>
         <h2>Utilisateurs</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3><?= $count_apprentices ?></h3>
+        <h3>{{ $count_apprentices }}</h3>
         <h2>Apprentis</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3><?= $count_cours ?></h3>
+        <h3>{{ $count_cours }}</h3>
         <h2>Cours</h2>
       </div>
       <div class="card-content-info noselect">
