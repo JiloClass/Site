@@ -25,6 +25,11 @@
         <link rel="stylesheet" href="{{ asset("fontawesome/css/all.css") }}">
         @yield("link")
     </head>
+
+    @php
+        $routeName = request()->route()->getName();
+    @endphp
+
     <body data-theme="dark">
         @include("includes.navbar")
         @yield("content")

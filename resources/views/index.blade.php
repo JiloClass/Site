@@ -8,7 +8,7 @@
 <header>
     <div class="title">
         <h1 class="noselect font-bold">Venez apprendre avec <span>JiloClass</span></h1>
-        <p>Et la particularité de JiloClass et que tous le monde peut faire apprendre aux autres</p>
+        <p>La particularité de JiloClass et que tous le monde peut faire apprendre aux autres</p>
     </div>
   </header>
   <div class="content">

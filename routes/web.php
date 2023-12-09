@@ -36,17 +36,9 @@ Route::get('/', function () {
 
 Route::name("courses.")->group(function () {
 
-    Route::get("/cours", function(){
-        $courses = Cours::paginate(6);
-        return view("cours.index", [
-            "courses" => $courses
-        ]);
-    })->name("index");
+    Route::get("/cours", [\App\Http\Controllers\CoursesController::class, "index"])->name("index");
 
-    Route::get("/cours/{id}", function($id){
-        $course = Cours::find($id);
-        return view("cours.show", [
-            "course" => $course
-        ]);
-    })->name("show");
+    Route::get("/cours/{id}", [\App\Http\Controllers\CoursesController::class, "show"])->name("show");
+
+    Route::get("/cours/search/{etiquette}", [\App\Http\Controllers\CoursesController::class, "search"])->name("search");
 });

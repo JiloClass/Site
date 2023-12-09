@@ -4,7 +4,6 @@
 @section("link")
     <link rel="stylesheet" href="{{ asset("css/cours.css") }}">
 @endsection
-
 @section("content")
     <div class="content">
         <div class="container mb-4">
@@ -13,14 +12,26 @@
                     <h4>Cours</h4>
                 </div>
                 <div class="header-right">
-                    <a class="btn-tags noselect" onclick="if(document.getElementById('etiquettes').style.display == 'block'){document.getElementById('etiquettes').style.display = 'none'}else{document.getElementById('etiquettes').style.display = 'block'}">Étiquettes({{ $count_tags }}) <i class="fa-solid fa-chevron-down"></i></a>
+                    <a class="btn-tags noselect" onclick="if (document.getElementById('etiquettes').style.display == 'block') {
+                        document.getElementById('etiquettes').style.display = 'none'} else {
+                            document.getElementById('etiquettes').style.display = 'block'
+                        }">Étiquettes({{ $count_tags }}) <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="dropdown-tags" id="etiquettes">
                         <ul>
-                            <form id="etiquette" method="post">
-                                @foreach($tags as $tag)
-                                    <a href="{{ route("courses.search", ["etiquette" => $tag->slug ] )}}" class="noselect"><img src="data:image/png;base64,{{ base64_encode($tag->icon) }}" width="20px" height="20px"/> {{ $tag->name }}</a>
-                                @endforeach
-                            </form>
+                            @foreach($tags as $tag)
+                                <a href="
+                                @if(!in_array($tag->slug, explode(",", $etiquette)))
+                                    {{ route("courses.search", ["etiquette" => $tag->slug]) }}
+                                @else
+                                    {{ route("courses.search", ["etiquette" => $tag->slug]) }}
+                                @endif"
+                                @class(["noselect", "active" => in_array($tag->slug, explode(",", $etiquette ))])>
+                                @if(in_array($tag->slug, explode(",", $etiquette )))
+                                    <i class="fa-regular fa-circle-xmark"></i>
+                                @endif
+                                <img src="data:image/png;base64,{{ base64_encode($tag->icon) }}" width="20px" height="20px"/> {{ $tag->name }}</a>
+                            @endforeach
+                            <a href="{{ route("courses.index") }}">Tous supprimer</a>
                         </ul>
                     </div>
                 </div>

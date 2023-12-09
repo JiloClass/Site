@@ -3,7 +3,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <nav class="navbar navbar-expand-lg navbar-base" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="{{ route("index") }}">
             <img src="{{ asset("img/jiloclass.gif") }}" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,14 +12,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a @class(["nav-link", "active" => request()->route()->getName() === 'index'])
-                        id="nav-link-home" href="{{ route("index") }}">Accueil</a>
+                    <a @class(["nav-link", "active" => str_starts_with(request()->route()->getName(), 'index')])
+                       id="nav-link-home" href="{{ route("index") }}">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link "id="nav-link-docs" href="#">Docs</a>
                 </li>
                 <li class="nav-item">
-                    <a @class(["nav-link", "active" => request()->route()->getName() === 'courses.index'])
+                    <a @class(["nav-link", "active" => str_starts_with($routeName, 'courses.')])
                     id="nav-link-cours" href="{{ route("courses.index") }}">Cours</a>
                 </li>
                 <li class="nav-item">
