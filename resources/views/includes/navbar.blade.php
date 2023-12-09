@@ -19,8 +19,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <a class="nav-link "id="nav-link-docs" href="#">Docs</a>
                 </li>
                 <li class="nav-item">
-                    <a @class(["nav-link", "active" => request()->route()->getName() === 'cours'])
-                    id="nav-link-cours" href="{{ route("cours") }}">Cours</a>
+                    <a @class(["nav-link", "active" => request()->route()->getName() === 'courses.index'])
+                    id="nav-link-cours" href="{{ route("courses.index") }}">Cours</a>
                 </li>
                 <li class="nav-item">
                     <a @class(["nav-link", "active" => request()->route()->getName() === 'forum'])

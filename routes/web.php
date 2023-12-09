@@ -18,25 +18,35 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $cours = Cours::orderBy('date', 'asc')->take(3)->get();
-    $count_cours = Cours::all()->count();
-    $count_user = Users::all()->count();
-    $count_creator = Creators::all()->count();
-    $count_apprentices = $count_user - $count_creator;
+    $courses = Cours::orderBy('date', 'asc')->take(3)->get();
+    $count_courses = Cours::all()->count();
+    $count_users = Users::all()->count();
+    $count_creators = Creators::all()->count();
+    $count_apprentices = $count_users - $count_creators;
 
     return view('index',[
-        "cours" => $cours,
-        "count_user" => $count_user,
-        "count_cours" => $count_cours,
-        "count_creator" => $count_creator,
+        "courses" => $courses,
+        "count_users" => $count_users,
+        "count_courses" => $count_courses,
+        "count_creators" => $count_creators,
         "count_apprentices" => $count_apprentices
     ]);
 
 })->name("index");
 
-Route::get("/cours", function(){
-    $cours = Cours::paginate(6);
-    return view("cours", [
-        "cours" => $cours
-    ]);
-})->name("cours");
+Route::name("courses.")->group(function () {
+
+    Route::get("/cours", function(){
+        $courses = Cours::paginate(6);
+        return view("cours.index", [
+            "courses" => $courses
+        ]);
+    })->name("index");
+
+    Route::get("/cours/{id}", function($id){
+        $course = Cours::find($id);
+        return view("cours.show", [
+            "course" => $course
+        ]);
+    })->name("show");
+});

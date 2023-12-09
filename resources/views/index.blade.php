@@ -45,20 +45,20 @@
     <div class="container">
         <h1>Nos Cours</h1>
         <div class="cards">
-            @foreach ($cours as $cour)
+            @foreach ($courses as $course)
                 <div class="card">
                     <div class="card-content">
                         <div class="title-img-user">
-                            <img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64, {{ base64_encode($cour->user->image) }}"/>
+                            <img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64, {{ base64_encode($course->user->image) }}"/>
                             <div class="title">
-                                <h4>{{ $cour->title }}</h4>
-                                <p>{{ $cour->user->pseudo }}</p>
+                                <h4>{{ $course->title }}</h4>
+                                <p>{{ $course->user->pseudo }}</p>
                             </div>
-                            <i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>
+                            @if($course->certified)<i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>@endif
                         </div>
-                    <p class="desc">{{ Str::limit($cour->description, 40, '...')}}</p>
+                    <p class="desc">{{ Str::limit($course->description, 40, '...')}}</p>
                     </div>
-                    <a class="start-learn" href="cours.php?id={{ $cour->id }}">Apprendre</a>
+                    <a class="start-learn" href="cours.php?id={{ $course->id }}">Apprendre</a>
                 </div>
             @endforeach
         </div>
@@ -78,7 +78,7 @@
     </svg>
     <div class="cards">
       <div class="card-content-info noselect">
-        <h3>{{ $count_user }}</h3>
+        <h3>{{ $count_users }}</h3>
         <h2>Utilisateurs</h2>
       </div>
       <div class="card-content-info noselect">
@@ -86,11 +86,11 @@
         <h2>Apprentis</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3>{{ $count_cours }}</h3>
+        <h3>{{ $count_courses }}</h3>
         <h2>Cours</h2>
       </div>
       <div class="card-content-info noselect">
-        <h3>{{ $count_creator }}</h3>
+        <h3>{{ $count_creators }}</h3>
         <h2>Créateurs</h2>
       </div>
     </div>

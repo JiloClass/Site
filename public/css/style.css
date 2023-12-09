@@ -225,6 +225,12 @@ header .title p{
     }
 }
 
+/* Paginator */
+
+.pagination{
+    margin: 1rem;
+}
+
 .page-link{
     background: var(--dark)!important;
     color: white!important;
@@ -236,7 +242,9 @@ header .title p{
     box-shadow: 0 0 0 0.1rem rgba(230, 84, 0, 0.5);
 }
 
-.active>.page-link, .page-link.active{
-    border-color: var(--mdark)!important;
-    background: var(--linear-principal)!important;
+.active>.page-link, .page-link.active {
+    border-color: var(--mdark) !important;
+    background: var(--linear-principal) !important;
 }
+
+/* End Paginator */
