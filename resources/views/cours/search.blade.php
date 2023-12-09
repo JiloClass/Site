@@ -19,17 +19,30 @@
                     <div class="dropdown-tags" id="etiquettes">
                         <ul>
                             @foreach($tags as $tag)
-                                <a href="
-                                @if(!in_array($tag->slug, explode(",", $etiquette)))
-                                    {{ route("courses.search", ["etiquette" => $tag->slug]) }}
-                                @else
-                                    {{ route("courses.search", ["etiquette" => $tag->slug]) }}
-                                @endif"
-                                @class(["noselect", "active" => in_array($tag->slug, explode(",", $etiquette ))])>
-                                @if(in_array($tag->slug, explode(",", $etiquette )))
-                                    <i class="fa-regular fa-circle-xmark"></i>
-                                @endif
-                                <img src="data:image/png;base64,{{ base64_encode($tag->icon) }}" width="20px" height="20px"/> {{ $tag->name }}</a>
+                                @php
+                                    $tagSlug = $tag->slug;
+                                    $tagSlugArray = explode(',', $etiquette);
+                                    $isActive = in_array($tagSlug, $tagSlugArray);
+                                    $newSlugArray = $tagSlugArray;
+
+                                    if ($isActive) {
+                                        $newSlugArray = array_diff($tagSlugArray, [$tagSlug]);
+                                    } else {
+
+                                        $newSlugArray[] = $tagSlug;
+                                    }
+
+                                    $newSlug = implode(',', $newSlugArray);
+
+                                    $link = $newSlug ? route("courses.search", ["etiquette" => $newSlug]) : route("courses.index");
+                                @endphp
+
+                                <a href="{{ $link }}" class="noselect @if($isActive) active @endif">
+                                    @if($isActive)
+                                        <i class="fa-regular fa-circle-xmark"></i>
+                                    @endif
+                                    <img src="data:image/png;base64,{{ base64_encode($tag->icon) }}" width="20px" height="20px"/> {{ $tag->name }}
+                                </a>
                             @endforeach
                             <a href="{{ route("courses.index") }}">Tous supprimer</a>
                         </ul>
