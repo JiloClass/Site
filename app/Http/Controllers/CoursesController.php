@@ -31,24 +31,22 @@ class CoursesController extends Controller
     }
 
     public function search(string $etiquette): Paginator | View{
-        if($etiquette != null){
-            $tags = explode(',', $etiquette);
+        $tags = explode(',', $etiquette);
 
-            $courses = Cours::where(function ($query) use ($tags) {
-                foreach ($tags as $tag) {
-                    $query->where('tags', 'LIKE', '%' . $tag . '%');
-                }
-            })->paginate(6);
+        $courses = Cours::where(function ($query) use ($tags) {
+            foreach ($tags as $tag) {
+                $query->where('tags', 'LIKE', '%' . $tag . '%');
+            }
+        })->paginate(6);
 
-            $tags = Tags::all();
-            $count_tags = $tags->count();
+        $tags = Tags::all();
+        $count_tags = $tags->count();
 
-            return view("cours.search", [
-                "courses" => $courses,
-                "tags" => $tags,
-                "etiquette" => $etiquette,
-                "count_tags" => $count_tags
-            ]);
-        }
+        return view("cours.search", [
+            "courses" => $courses,
+            "tags" => $tags,
+            "etiquette" => $etiquette,
+            "count_tags" => $count_tags
+        ]);
     }
 }
