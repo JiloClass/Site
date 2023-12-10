@@ -229,13 +229,14 @@ h1, h2, h3, h4, h5, h6, p, em, strong, table, tr, td, thead, tfoot, th{
 
 .card-message-content{
     width: 100%;
+    color: var(--secondary);
 }
 
 @media screen and (max-width: 1023px){
     .card-message{
         flex-direction: column!important;
     }
-    
+
     .card-message-content{
         margin: 15px;
     }
@@ -248,7 +249,7 @@ h1, h2, h3, h4, h5, h6, p, em, strong, table, tr, td, thead, tfoot, th{
         justify-content: center!important;
         align-items: center!important;
     }
-    
+
     .card-message.warning-connection i.logo-warning{
         margin-top: 15px;
     }
