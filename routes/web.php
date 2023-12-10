@@ -42,3 +42,8 @@ Route::name("courses.")->group(function () {
 
     Route::get("/cours/search/{etiquette}", [\App\Http\Controllers\CoursesController::class, "search"])->name("search");
 });
+
+Route::name("forum.")->group(function(){
+    Route::get("/forum", [\App\Http\Controllers\ForumController::class, "index"])->name("index");
+    Route::get("/forum/topic/{topic_id}", [\App\Http\Controllers\ForumController::class, "show_topic"])->name("topic");
+});

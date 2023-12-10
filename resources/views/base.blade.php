@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <meta charset="html_decode">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield("title")</title>
         <meta name="google-site-verification" content="JGHu17umjt-JUnaK954NxXpaIOSt5QmSoqYBJmGWXHM"/>
@@ -19,11 +20,11 @@
         <!-- } END SEO -->
         <!-- Link -->
         <link rel="stylesheet" href="{{ asset("css/bootstrap.min.css") }}">
-        <link rel="stylesheet" href="{{ asset("css/style.css") }}">
+        @yield("head")
         <link rel="shortcut icon" href="{{ asset("img/jiloclass.png") }}" type="image/x-icon">
         <link rel="stylesheet" href="{{ asset("css/footer.css") }}">
         <link rel="stylesheet" href="{{ asset("fontawesome/css/all.css") }}">
-        @yield("link")
+
     </head>
 
     @php

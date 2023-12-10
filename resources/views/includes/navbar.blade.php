@@ -23,8 +23,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     id="nav-link-cours" href="{{ route("courses.index") }}">Cours</a>
                 </li>
                 <li class="nav-item">
-                    <a @class(["nav-link", "active" => request()->route()->getName() === 'forum'])
-                    id="nav-link-forum" href="forum.php">Forum</a>
+                    <a @class(["nav-link", "active" => str_starts_with($routeName, 'forum.')])
+                    id="nav-link-forum" href="{{ route("forum.index") }}">Forum</a>
                 </li>
             </ul>
             <div class="navbar-right">

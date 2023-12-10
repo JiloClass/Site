@@ -1,7 +1,8 @@
 @extends("base")
 
 @section("title", "JiloClass | Accueil")
-@section("link")
+@section("head")
+<link rel="stylesheet" href="{{ asset("css/style.css") }}">
 <link rel="stylesheet" href="{{ asset("css/card.css") }}">
 @endsection
 @section("content")
