@@ -26,7 +26,6 @@
                                     $newSlug = implode(',', $newSlugArray);
                                     $link = $newSlug ? route("courses.search", ["etiquette" => $newSlug]) : route("courses.index");
                                 @endphp
-
                                 <a href="{{ $link }}" @class(["no-select", "active" => $isActive])">
                                     @if($isActive)
                                         <i class="fa-regular fa-circle-xmark"></i>
