@@ -45,7 +45,7 @@
                                     </div>
                                     @if($course->certified)<i data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié" class="fa-solid fa-circle-check fa-2x" title="Certifié"></i>@endif
                                 </div>
-                                <p class="desc">{{ Str::limit($course->description, 40, '...')}}</p>
+                                <p class="desc">{{ Str::limit($course->description, 150, '...')}}</p>
                                 <a class="start-learn" href="{{ route("courses.show", ["id" => $course->id ])}}">Apprendre</a>
                             </div>
                         </div>
