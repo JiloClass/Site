@@ -20,20 +20,10 @@
                         <ul>
                             @foreach($tags as $tag)
                                 @php
-                                    $tagSlug = $tag->slug;
                                     $tagSlugArray = explode(',', $etiquette);
-                                    $isActive = in_array($tagSlug, $tagSlugArray);
-                                    $newSlugArray = $tagSlugArray;
-
-                                    if ($isActive) {
-                                        $newSlugArray = array_diff($tagSlugArray, [$tagSlug]);
-                                    } else {
-
-                                        $newSlugArray[] = $tagSlug;
-                                    }
-
+                                    $isActive = in_array($tag->slug, $tagSlugArray);
+                                    $newSlugArray = $isActive ? array_diff($tagSlugArray, [$tag->slug]) : [...$tagSlugArray, $tag->slug];
                                     $newSlug = implode(',', $newSlugArray);
-
                                     $link = $newSlug ? route("courses.search", ["etiquette" => $newSlug]) : route("courses.index");
                                 @endphp
 
