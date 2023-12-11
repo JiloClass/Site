@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model
+class Users extends Authenticate
 {
     use HasFactory;
 
-    protected $table = "users";
+    protected string $table = "users";
 
 }
