@@ -38,7 +38,7 @@
                                     {{ $topic->title }}
                                 </a>
                                 <div class="topic-user">
-                                    De {{ $topic->user->pseudo }}
+                                    De {{ $topic->user->name }}
                                 </div>
                             </div>
                             <div class="topic-body">

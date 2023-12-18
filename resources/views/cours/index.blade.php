@@ -41,7 +41,7 @@
                                     <div class="title-user">
                                         <div class="title">
                                             <h4>{{ $course->title }}</h4>
-                                            <p>de {{ $course->user->pseudo }}</p>
+                                            <p>de {{ $course->user->name }}</p>
                                         </div>
                                     </div>
                                     @if($course->certified)<i data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié" class="fa-solid fa-circle-check fa-2x" title="Certifié"></i>@endif

@@ -15,7 +15,7 @@ class Cours extends Model
         "id",
         "id_user",
         "type",
-        "titre",
+        "title",
         "tags",
         "image",
         "description",
@@ -25,6 +25,6 @@ class Cours extends Model
 
     public function user()
     {
-        return $this->belongsTo(Users::class, "user_id");
+        return $this->belongsTo(User::class, "user_id");
     }
 }

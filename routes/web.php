@@ -2,7 +2,6 @@
 
 use App\Models\Cours;
 use App\Models\Creators;
-use App\Models\Users;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +19,7 @@ Route::get('/', function () {
 
     $courses = Cours::orderBy('date', 'asc')->take(3)->get();
     $count_courses = Cours::all()->count();
-    $count_users = Users::all()->count();
+    $count_users = \App\Models\User::all()->count();
     $count_creators = Creators::all()->count();
     $count_apprentices = $count_users - $count_creators;
 
@@ -46,4 +45,8 @@ Route::name("courses.")->group(function () {
 Route::name("forum.")->group(function(){
     Route::get("/forum", [\App\Http\Controllers\ForumController::class, "index"])->name("index");
     Route::get("/forum/topic/{topic_id?}", [\App\Http\Controllers\ForumController::class, "show_topic"])->name("topic");
+});
+
+Route::name("auth.")->group(function (){
+    Route::get("/register", [\App\Http\Controllers\Auth\RegisterController::class, "show"])->name("register");
 });

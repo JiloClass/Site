@@ -50,10 +50,10 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="title-img-user">
-                            <img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64, {{ base64_encode($course->user->image) }}"/>
+                            <img style="border: 1px solid var(--secondary);border-radius: 250px;" width="40px" height="40px" class="noselect" alt="Mon Profil" src="data:image/png;base64, {{ base64_encode($course->user->icon) }}"/>
                             <div class="title">
                                 <h4>{{ $course->title }}</h4>
-                                <p>{{ $course->user->pseudo }}</p>
+                                <p>{{ $course->user->name }}</p>
                             </div>
                             @if($course->certified)<i class="fa-solid fa-circle-check fa-2x" data-bs-custom-class="custom-tooltip" data-bs-toggle="tooltip" data-bs-title="Certifié"></i>@endif
                         </div>

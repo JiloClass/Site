@@ -28,7 +28,20 @@
     </head>
 
     @php
-        $routeName = request()->route()->getName();
+        /**
+         *
+         * @param string $route
+         * @return boolean
+         *
+         */
+
+        function routeName(string $route){
+            if(str_starts_with(request()->route()->getName(), $route)){
+                return true;
+            } else {
+                return false;
+            }
+        }
     @endphp
 
     <body data-theme="dark">
